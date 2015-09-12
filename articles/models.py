@@ -5,6 +5,7 @@ from django.contrib.auth.models import User
 class Category(models.Model):
     name = models.CharField(max_length=50)
     description = models.TextField()
+    icon = models.TextField()
     # articles: related field for Article.categories
     # resources: related field for Resource.categories
 
@@ -14,6 +15,7 @@ class Category(models.Model):
 
 class Article(models.Model):
     title = models.CharField(max_length=100)
+    summary = models.TextField()
     author = models.ForeignKey(User)
     text = models.TextField()
     categories = models.ManyToManyField(Category, related_name='articles')
@@ -28,6 +30,7 @@ class Resource(models.Model):
     '''
     name = models.CharField(max_length=50)
     last_updated = models.DateTimeField(auto_now=True)
+    summary = models.TextField()
     description = models.TextField()
     address = models.TextField()
     # If False, the resource is something like a phone hotline, and shouldn't be filtered by location.
