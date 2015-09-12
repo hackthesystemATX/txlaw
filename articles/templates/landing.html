@@ -7,10 +7,10 @@
 		<h1> How can we assist you?</h1>
 		<form action="{% url 'search' %}" method="post"> {% csrf_token %}
 			<div class="form-group">
-			<input type="text" id="query" class="form-control input-lg" placeholder="Type your question here">
+			<input type="text" name="query" class="form-control input-lg" placeholder="Type your question here">
 			<div class="row">
 				<div class="col-xs-8">
-					<input type="text" id="zip" class="form-control input-lg" placeholder="Enter your zip code">
+					<input type="text" name="zip" class="form-control input-lg" placeholder="Enter your zip code">
 				</div>
 
 				<div class="col-xs-4">
@@ -27,7 +27,6 @@
 		<div class="row">
 			{% for category in categories %}
 			<div class="col-xs-3">
-				<span ></span>
 				<p>{{ category.name }}</p>
 			</div>
 			{% endfor %}
