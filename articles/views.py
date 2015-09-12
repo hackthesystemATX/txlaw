@@ -21,7 +21,9 @@ def resource(request, id):
 
 def category(request, id):
     category = get_object_or_404(Category, pk=id)
-    return render(request, "category.html", {'category': category})
+    articles = category.articles
+    resources = category.resources
+    return render(request, "results.html", {'articles': articles, 'resources': resources})
 
 def login(request):
     pass
