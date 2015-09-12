@@ -22,9 +22,9 @@ urlpatterns = [
     url(r'^$', views.landing),
     url(r'^search/$', views.search, name='search'),
     url(r'^categories/(?P<num>[0-9]+)/$', views.category),
-    url(r'^articles/(?P<num>[0-9]+)/$', views.article),
+    url(r'^articles/(?P<num>[0-9]+)/$', views.article, name='article'),
     url(r'^resources/(?P<num>[0-9]+)/$', views.resource),
-#    url(r'^login/$', views.login),
-#    url(r'^logout/$', views.logout),
-#    url(r'^register/$', views.register),
+    url(r'^login/$', views.login),
+    url(r'^logout/$', views.logout),
+    url(r'^register/$', views.register),
 ]
