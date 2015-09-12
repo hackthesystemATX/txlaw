@@ -13,7 +13,7 @@ class Article(models.Model):
     title = models.CharField(max_length=100)
     author = models.ForeignKey(User)
     text = models.TextField()
-    categories = models.ManyToManyField(Category, related_field='articles')
+    categories = models.ManyToManyField(Category, related_name='articles')
 
 
 class Resource(models.Model):
@@ -23,6 +23,8 @@ class Resource(models.Model):
     name = models.CharField(max_length=50)
     description = models.TextField()
     address = models.TextField()
+    # If False, the resource is something like a phone hotline, and shouldn't be filtered by location.
+    location_based = models.BooleanField(default=True)
     phone = models.CharField(max_length=20)
     hours = models.TextField()
-    categories = models.ManyToManyField(Category, related_field='resources')
+    categories = models.ManyToManyField(Category, related_name='resources')
