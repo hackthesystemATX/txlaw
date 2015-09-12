@@ -1,7 +1,7 @@
-$(document).ready(function() {
+/** $(document).ready(function() {
 	alert("JQuery is working!");
 
-//Submit post
+Submit post
 
 
 });
