@@ -21,6 +21,7 @@ class Resource(models.Model):
     A resource for users, such as lawyers' offices, domestic violence shelters, tenants' groups, etc.
     '''
     name = models.CharField(max_length=50)
+    last_updated = models.DateTimeField(auto_now=True)
     description = models.TextField()
     address = models.TextField()
     # If False, the resource is something like a phone hotline, and shouldn't be filtered by location.
