@@ -8,12 +8,18 @@ class Category(models.Model):
     # articles: related field for Article.categories
     # resources: related field for Resource.categories
 
+    def __str__(self):
+        return self.name
+
 
 class Article(models.Model):
     title = models.CharField(max_length=100)
     author = models.ForeignKey(User)
     text = models.TextField()
     categories = models.ManyToManyField(Category, related_name='articles')
+
+    def __str__(self):
+        return self.title
 
 
 class Resource(models.Model):
@@ -29,3 +35,11 @@ class Resource(models.Model):
     phone = models.CharField(max_length=20)
     hours = models.TextField()
     categories = models.ManyToManyField(Category, related_name='resources')
+
+    def __str__(self):
+        return self.name
+
+
+class Profile(models.Model):
+    user = models.OneToOneField(User, related_name='profile')
+

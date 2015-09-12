@@ -16,10 +16,12 @@ def article(request, id):
     return render(request, "article.html", {'article': article})
 
 def resource(request, id):
-    pass
+    resource = get_object_or_404(Resource, pk=id)
+    return render(request, "resource.html", {'resource': resource})
 
 def category(request, id):
-    pass
+    category = get_object_or_404(Category, pk=id)
+    return render(request, "category.html", {'category': category})
 
 def login(request):
     pass

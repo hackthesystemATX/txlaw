@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {% load staticfiles %}
 <!DOCTYPE html>
 <html lang="en">
@@ -75,4 +76,83 @@
   </body>
 
 
+=======
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- Bootstrap -->
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+
+    <title>TXLaw - Like Rap Genius, But For Laws</title>
+  </head>
+
+
+  <body>
+    <div id="wrap" class="wrapper"> 
+      <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button class='btn btn-primary'>
+              <a id="logo" class="nav-logo" href="#"> Logo </a>
+            </button>
+          </div> <!-- navbar header -->
+
+          <!-- Links -->
+          <div> 
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="#">Home</a></li>
+              <li><a href="#">Resources</a></li>
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </div>
+        </div> <!-- container fluid-->
+      </nav>
+
+
+      {% block content %}{% endblock %}
+
+
+
+      <footer class="footer">
+        <div class="container">
+          <div class='row'>
+            <div class="col-xs-3">
+              <p>Supported by: </p>
+            </div>
+            <div class="col-xs-3">
+              <button class='btn btn-primary'>
+                <a href="#"> SPONSOR </a>
+              </button>
+            </div>
+            <div class="col-xs-3">
+              <button class='btn btn-primary'>
+                <a href="#"> SPONSOR </a>
+              </button>
+            </div>
+            <div class="col-xs-3">
+              <button class='btn btn-primary'>
+                <a href="#"> SPONSOR </a>
+              </button>
+            </div>
+          </div> <!-- row -->
+        </div>
+      </footer>
+        
+    </div> <!-- wrapper -->
+
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/app.js' %}"></script>
+  </body>
+
+
+>>>>>>> origin/master
 </html>

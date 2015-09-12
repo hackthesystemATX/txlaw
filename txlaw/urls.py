@@ -20,7 +20,7 @@ from articles import views
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^$', views.landing),
-    url(r'^search/$', views.search),
+    url(r'^search/$', views.search, name='search'),
     url(r'^categories/(?P<num>[0-9]+)/$', views.category),
     url(r'^articles/(?P<num>[0-9]+)/$', views.article),
     url(r'^resources/(?P<num>[0-9]+)/$', views.resource),
