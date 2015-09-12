@@ -6,10 +6,5 @@ Submit post
 
 });
 
+**/ 
 
-$("#fillquery").submit(function() {
-
-	alert("submitted");
-	event.preventDefault();
-
-});

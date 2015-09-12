@@ -5,7 +5,7 @@
 	<div id="assistModule" class="container-fluid">
 
 		<h1> How can we assist you?</h1>
-		<form action="{% url 'search' %}" method="post">
+		<form action="{% url 'search' %}" method="post"> {% csrf_token %}
 			<div class="form-group">
 			<input type="text" id="query" class="form-control input-lg" placeholder="Type your question here">
 			<div class="row">
@@ -27,7 +27,7 @@
 		<div class="row">
 			{% for category in categories %}
 			<div class="col-xs-3">
-				<img class="topicimg" src="..." alt="..." class="img-rounded">
+				<span ></span>
 				<p>{{ category.name }}</p>
 			</div>
 			{% endfor %}
@@ -37,6 +37,9 @@
 
 
 	<div id="suggestionsModule" class="container-fluid">
+		{% for article in articles %}
+			<a href="#"> </a>
+		{% endfor %}
 
 	</div><!-- suggestionModule -->
 
