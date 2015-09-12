@@ -1,8 +1,32 @@
 {% extends "base.html" %}
 
 {% block content %}
-	{% for article in articles %}
-		<h2>{{ article.title }}</h2>
-		<p>{{ article.text }}</p>
-	{% endfor %}
+
+<div class="wrapper">
+
+	<div id="searchbar">
+		<form>
+			<div class="row">
+				<div class="col-xs-9">
+					<input type="text" name="search" class="form-control input-lg" placeholder="Type here to ask another question">
+				</div>
+
+				<div class="col-xs-3">
+					<button type="submit" class="btn btn-success btn-lg">Get help!</button>
+				</div>
+			</div>
+		</form>
+	</div>
+
+	<div id="result">
+		{% for article in articles %}
+		<h3 class="media-heading">{{ article.title }}</h3>
+		<p>{{ article.summary }}</p>
+		<a href="{% url 'article' article.pk %}"> Read More </a>
+		{% endfor %}
+	</div>
+
+</div>
+
+
 {% endblock %}

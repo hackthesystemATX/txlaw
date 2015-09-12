@@ -1,8 +1,10 @@
 {% extends "base.html" %}
 
 {% block content %}
-<div class="wrapper text-center">
-	<div id="assistModule" class="container-fluid">
+<div class="wrapper">
+	<div id="assistModule" class="container-fluid jumbotron text-center">
+
+		
 
 		<h1> How can we assist you?</h1>
 		<form action="{% url 'search' %}" method="post"> {% csrf_token %}
@@ -10,23 +12,26 @@
 			<input type="text" name="query" class="form-control input-lg" placeholder="Type your question here">
 			<div class="row">
 				<div class="col-xs-8">
-					<input type="text" name="zip" class="form-control input-lg" placeholder="Enter your zip code">
+					<input type="number" maxlength="5" name="zip" class="form-control input-lg" placeholder="Enter your zip code">
 				</div>
 
 				<div class="col-xs-4">
 					<button type="submit" class="btn btn-success btn-lg">Get help!</button>
 				</div>
 			</div>
+
+			<p> We are a group dedicated to helping fellow Texans navigate everyday legal troubles!</p>
 			</div>
 		</form>
 	</div>  <!-- assistModule -->
 
 
-	<div id="exploreModule" class="container-fluid">
+	<div id="exploreModule" class="container-fluid jumbotron text-center">
 		<p>Explore common questions by topic:</p>
 		<div class="row">
 			{% for category in categories %}
-			<div class="col-xs-3">
+			<div id='category' class="col-xs-6 col-md-3">
+				<span class="{{ category.icon }}"></span>
 				<p>{{ category.name }}</p>
 			</div>
 			{% endfor %}
@@ -35,10 +40,12 @@
 	</div> <!-- exploreModule -->
 
 
-	<div id="suggestionsModule" class="container-fluid">
-		{% for article in articles %}
-			<a href="#"> </a>
-		{% endfor %}
+	<div id="suggestionsModule" class="container-fluid jumbotron text-center">
+		<div class="article">
+			<p><a href="#">Link to article</a></h3>
+			<p><a href="#">Link to article</a></h3>
+			<p><a href="#">Link to article</a></h3>
+		</div>
 
 	</div><!-- suggestionModule -->
 

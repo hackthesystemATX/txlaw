@@ -19,12 +19,16 @@ input[type=text] {
 body {
 	padding-left:10%;
 	padding-right:10%;
+	font-family:'Asap', sans-serif;
+}
+
+span {
+	font-size:5em;
 }
 
 
+/***** ICON FONT ******/
 
-
-/***** FONT ******/
 @charset "UTF-8";
 
 /* untitled-font-1 */

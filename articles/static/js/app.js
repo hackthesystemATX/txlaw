@@ -8,3 +8,8 @@ Submit post
 
 **/ 
 
+$(document).ready(function() {
+
+	
+
+});
