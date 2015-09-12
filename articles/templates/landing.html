@@ -1,5 +1,44 @@
 {% extends "base.html" %}
 
 {% block content %}
-Landing page goes here
+<div class="wrapper text-center">
+	<div id="assistModule" class="container-fluid">
+
+		<h1> How can we assist you?</h1>
+		<form action="{% url 'search' %}" method="post">
+			<div class="form-group">
+			<input type="text" id="query" class="form-control input-lg" placeholder="Type your question here">
+			<div class="row">
+				<div class="col-xs-8">
+					<input type="text" id="zip" class="form-control input-lg" placeholder="Enter your zip code">
+				</div>
+
+				<div class="col-xs-4">
+					<button type="submit" class="btn btn-success btn-lg">Get help!</button>
+				</div>
+			</div>
+			</div>
+		</form>
+	</div>  <!-- assistModule -->
+
+
+	<div id="exploreModule" class="container-fluid">
+		<p>Explore common questions by topic:</p>
+		<div class="row">
+			{% for category in categories %}
+			<div class="col-xs-3">
+				<img class="topicimg" src="..." alt="..." class="img-rounded">
+				<p>{{ category.name }}</p>
+			</div>
+			{% endfor %}
+		</div> <!-- row -->
+
+	</div> <!-- exploreModule -->
+
+
+	<div id="suggestionsModule" class="container-fluid">
+
+	</div><!-- suggestionModule -->
+
+</div> <!-- wrapper -->
 {% endblock %}
