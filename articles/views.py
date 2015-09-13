@@ -30,10 +30,9 @@ def article(request, id):
                 resources[resource] = 1
             else:
                 resources[resource] += 1
-    print(resources)
+    
     # Sort based on how many categories overlap
-    resources_sorted = sorted(resources.items(), key=operator.itemgetter(1), reverse=True)
-    print(resources_sorted)
+    resources_sorted = [res[0] for res in sorted(resources.items(), key=operator.itemgetter(1), reverse=True)]
 
     return render(request, "article.html", {'article': article, 'resources': resources_sorted})
 
