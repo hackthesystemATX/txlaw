@@ -15,7 +15,9 @@ Light grey: #F5F5F7
 
 
 /********* Base **********/
-
+html,body{
+  height:100%;
+}
 body {
 	font-family:'Asap', sans-serif;
   color:#4A4A4A;
@@ -76,6 +78,9 @@ text below icons- 2em
 .footer {
   background-color:#4A4A4A;
   width:100%;
+  color:#fff;
+  height:80px;
+  position:relative;
 }
 
 
