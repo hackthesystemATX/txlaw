@@ -15,12 +15,16 @@ Light grey: #F5F5F7
 
 
 /********* Base **********/
-
+html,body{
+  height:100%;
+}
 body {
 	font-family:'Asap', sans-serif;
   color:#4A4A4A;
   height:100%;
+  padding-bottom: 70px;
 }
+
 
 p, a {
   font-size: 1.5em;
@@ -49,7 +53,6 @@ text below icons- 2em
 
 
 .section {
-  position:relative;
   padding: 10% 5% 10% 5%;
 }
 
@@ -72,16 +75,14 @@ text below icons- 2em
 }
 
 
-.navbar a {
-
-}
-
-
-footer {
-  background:#4A4A4A;
-  padding: 5%;
+.footer {
+  background-color:#4A4A4A;
+  width:100%;
   color:#fff;
+  height:80px;
+  position:relative;
 }
+
 
 
 /********* Landing; Jumbotron *********/
@@ -229,11 +230,12 @@ text below header- 2em
 /********* Resource Module *********/
 .resourcemod {
 	padding:2%;
-	margin-bottom:2%;
+  background-color:#F5F5F7;
 }
 
 .resourceitem {
   background-color: #eee;
+  padding:2%;
 }
 
 .resourcemod a {

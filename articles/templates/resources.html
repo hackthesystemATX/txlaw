@@ -22,7 +22,7 @@
 
 		{% if categories %}
 		<div id="exploreModule" class="container-fluid text-center section">
-			<p id="explorecat">Explore common questions by topic:</p>
+			<p id="explorecat">Search by category:</p>
 			<div class="row">
 				{% for category in categories %}
 				<div id='resourceCat' class="col-xs-6 col-md-3">
@@ -40,9 +40,7 @@
 <div class='resoucemod section'>
 	<div class="row section">
 		{% for resource in resources %}
-		<div class='col-xs-4 resourceitem'>
 			{% include 'resource.html' %}
-		</div>
 		{% endfor %}
 	</div>
 </div><!-- ResouceMod -->
