@@ -84,8 +84,12 @@ text below icons- 2em
   padding: .75em;
 }
 
-.sponsor {
-  height:100px;
+.logo  {
+  height: 1.75em;
+}
+
+.sponsor{
+  height:5em;
 }
 
 
