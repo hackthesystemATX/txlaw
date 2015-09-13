@@ -5,8 +5,8 @@
 
 {% block content %}
 
-<div class="wrapper section">
-	
+<div class="wrapper">
+	<div class='topbg container-fluid'>
 		<div id="searchbar">
 			<form action="{% url 'search' %}" method="post"> {% csrf_token %}
 				<div class="form-group">
@@ -21,6 +21,7 @@
 				</div>
 			</form>
 		</div>
+	</div>
 
 	<div class='article-section'>
 		<div id="goto" class='section'>
@@ -44,7 +45,7 @@
 		<div class='deco-hr text-center'>
 			<p>Need further assistance? Contact one of our partner organizations.</p>
 		</div>
-		<h2>Resources:</h2>
+
 		<div class="row">
 				{% for resource in resources %}
 					{% include 'resource.html' %}
