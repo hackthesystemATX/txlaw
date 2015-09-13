@@ -1,4 +1,5 @@
 from django.shortcuts import render, get_object_or_404
+from django.contrib.auth import authenticate, login
 from .models import Category, Article, Resource
 
 def landing(request):
@@ -21,17 +22,32 @@ def resource(request, id):
 
 def category(request, id):
     category = get_object_or_404(Category, pk=id)
-    articles = category.articles
-    resources = category.resources
+    articles = category.articles.all()
+    resources = category.resources.all()
     return render(request, "results.html", {'articles': articles, 'resources': resources})
 
-def login(request):
-    pass
+def login_view(request):
+    username = request.POST['username']
+    password = request.POST['password']
+    user = authenticate(username=username, password=password)
+    if user is not None:
+        if user.is_active:
+            login(request, user)
+            # Redirect to a success page
+            return
+        else:
+            # Returns a 'disabled account' error
+            return
+    else:
+        # Return 'invalid login'
+        return
 
-def logout(request):
-    pass
+def logout_view(request):
+    logout(request)
+    # Redirect to success page
+    return
 
-def register(request):
+def register_view(request):
     pass
 
 # article editing view

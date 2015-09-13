@@ -19,12 +19,12 @@ from articles import views
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^$', views.landing),
+    url(r'^$', views.landing, name='landing'),
     url(r'^search/$', views.search, name='search'),
-    url(r'^categories/(?P<id>[0-9]+)/$', views.category),
+    url(r'^categories/(?P<id>[0-9]+)/$', views.category, name='category'),
     url(r'^articles/(?P<id>[0-9]+)/$', views.article, name='article'),
     url(r'^resources/(?P<id>[0-9]+)/$', views.resource),
-    url(r'^login/$', views.login),
-    url(r'^logout/$', views.logout),
-    url(r'^register/$', views.register),
+    url(r'^login/$', views.login_view, name='login'),
+    url(r'^logout/$', views.logout_view, name='logout'),
+    url(r'^register/$', views.register_view, name='register'),
 ]
