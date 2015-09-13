@@ -77,7 +77,7 @@ WSGI_APPLICATION = 'txlaw.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
+        'ENGINE': 'mysql.connector.django',
         'NAME': 'legalpal',
         'USER': 'django',
         'PASSWORD': 'vaHuGxk4FbFGyqBFBgP3XwyFk59V93PQD9fKcgHuXcHrEN2Nzs2K8TZfVcUrPgFB',
