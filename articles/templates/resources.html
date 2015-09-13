@@ -12,7 +12,7 @@
 						<input type="text" name="query" class="form-control input-lg" placeholder="Type your question here...">
 					</div>
 					<div class='col-xs-2'> 
-						<button type="submit" class="btn btn-block btn-lg help-btn">Go</button>
+						<button type="submit" class="btn btn-block btn-lg go-btn">Go</button>
 					</div>
 				</div> <!-- end row class-->
 			</div>
@@ -21,7 +21,7 @@
 
 {% if categories %}
 <div id="exploreModule" class="container-fluid jumbotron text-center">
-	<p>Explore common questions by topic:</p>
+	<p id="explorecat">Explore common questions by topic:</p>
 	<div class="row">
 		{% for category in categories %}
 		<div id='resourceCat' class="col-xs-6 col-md-3">
@@ -36,12 +36,14 @@
 	</div> <!-- row -->
 </div> <!-- exploreModule -->
 {% endif %}
-
-<div class="row">
-	{% for resource in resources %}
-		{% include 'resource.html' %}
-	{% endfor %}
-</div>
+<div class='resoucemod section'>
+	<div class="row">
+		<div class='col-xs-4'>
+		{% for resource in resources %}
+			{% include 'resource.html' %}
+		{% endfor %}
+		</div>
+	</div>
 </div><!-- ResouceMod -->
 
 </div>

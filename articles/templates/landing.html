@@ -2,21 +2,25 @@
 
 {% block content %}
 <div class="wrapper">
-	<div id="assistModule" class="container-fluid bg-section text-center section">
-		<h2>LegalPal helps Texans navigate legal troubles</h2>
-		<h3> How can we assist you?</h3>
-		<form action="{% url 'search' %}" method="post"> {% csrf_token %}
-			<div class="form-group">
-				<div class='row'>
-					<div class='col-xs-6 col-xs-offset-2'>
-						<input type="text" name="query" class="form-control input-lg" placeholder="Type your question here...">
+	<div id="assistModule" class="container-fluid text-center">
+		<div class='jumbotron'>
+			<div class='container jumbobox'>
+				<h2>LegalPal helps Texans navigate legal troubles</h2>
+				<h3> How can we assist you?</h3>
+				<form action="{% url 'search' %}" method="post"> {% csrf_token %}
+					<div class="form-group">
+						<div class='row'>
+							<div class='col-xs-6 col-xs-offset-2'>
+								<input type="text" name="query" class="form-control input-lg" placeholder="Type your question here...">
+							</div>
+							<div class='col-xs-2'> 
+								<button type="submit" class="btn btn-block btn-lg go-btn">Go</button>
+							</div>
+						</div> <!-- end row class-->
 					</div>
-					<div class='col-xs-2'> 
-						<button type="submit" class="btn btn-block btn-lg help-btn">Go</button>
-					</div>
-				</div> <!-- end row class-->
+				</form>
 			</div>
-		</form>
+		</div>
 	</div>  <!-- assistModule -->
 
 
@@ -26,7 +30,6 @@
 			{% for category in categories %}
 			<div id='category' class="col-xs-6 col-md-3">
 				<a href="{% url 'category' category.pk %}"> 
-					<div id='cat-circle'>
 					<span class="{{ category.icon }}"></span>
 				</a>
 				</div>	

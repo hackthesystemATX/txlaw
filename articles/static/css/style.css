@@ -35,8 +35,8 @@ button {
 }
 
 
-.bg-section {
-  background-color: blue;
+/***.bg-section {
+  background-color: teal;
   background:center no-repeat fixed url(cap.jpg) #eee;
   background-size: cover;
   background-position: center;
@@ -45,6 +45,18 @@ button {
 
 }
 
+***/
+
+.jumbotron {
+  margin:0;
+  position: relative;
+  background: teal url("../static/assets/cap-bg.jpg") center center;
+  width:100%;
+  height:100%;
+  background-size: cover;
+  overflow:hidden;
+
+}
 
 .section {
   position:relative;
@@ -72,38 +84,42 @@ footer {
 
 /********* Landing; Jumbotron *********/
 
-.bg-section h1, h2, h3{
+.jumbobox h1, .jumbobox h2, .jumbobox h3,
+#exploreModule h1, #exploreModule h2, #exploreModule h3{
   color:#fff;
 }
 
 
-.help-btn {
+.go-btn {
   background-color:#f98258;
+  margin-left: -25%;
 }
 
 
 
 
 /********* Category Icon *********/
-#cat-circle {
-  background:#7d8082;
-  border-radius: 50%;
-  vertical-align: middle;
-}
-
-#category a, #resourceCat a {
+#category a {
+  color:teal;
+}#resourceCat a {
   color:white;
 }
 
-#category, #resourceCat a:hover {
+
+#category a:hover, #resourceCat a:hover {
   color:#f98258;
   text-decoration: none !important;
 }
 
-#category, #resourceCat p{
+#category, #resourceCat p {
   text-transform: uppercase;
   margin-top: 2%;
 }
+
+#explorecat {
+  color:white;
+}
+
 
 
 /********* Articles *********/
@@ -121,7 +137,7 @@ footer {
 }
 
 .article-title {
-  color:blue;
+  color:teal;
 
 }
 
@@ -130,7 +146,7 @@ footer {
 }
 
 #backto a {
-  color: blue;
+  color: teal;
 }
 
 
@@ -142,8 +158,10 @@ footer {
 }
 
 .resourcemod a {
-  color:blue;
+  color:teal;
 }
+
+
 
 
 
