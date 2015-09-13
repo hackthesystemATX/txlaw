@@ -9,20 +9,13 @@
 		<h1> How can we assist you?</h1>
 		<form action="{% url 'search' %}" method="post"> {% csrf_token %}
 			<div class="form-group">
-			<input type="text" name="query" class="form-control input-lg" placeholder="Type your question here">
-			<div class="row">
-				<div class="col-xs-8">
-					<input type="number" maxlength="5" name="zip" class="form-control input-lg" placeholder="Enter your zip code">
-				</div>
-
-				<div class="col-xs-4">
-					<button type="submit" class="btn btn-success btn-lg">Get help!</button>
-				</div>
-			</div>
-
-			<p> We are a group dedicated to helping fellow Texans navigate everyday legal troubles!</p>
+					<input type="text" name="query" class="input-lg" placeholder="Type your question here...">
+					<button type="submit" class="btn btn-success btn-lg ">Get help!</button>
 			</div>
 		</form>
+
+			<p> We are a group dedicated to helping fellow Texans navigate everyday legal troubles!</p>
+			<p><a href="#">Read More About Us</a></p>
 	</div>  <!-- assistModule -->
 
 
@@ -31,23 +24,13 @@
 		<div class="row">
 			{% for category in categories %}
 			<div id='category' class="col-xs-6 col-md-3">
-				<span class="{{ category.icon }}"></span>
+				<a href="{% url 'category' category.pk %}"> <span class="{{ category.icon }}"></span></a>
 				<p>{{ category.name }}</p>
 			</div>
 			{% endfor %}
 		</div> <!-- row -->
 
 	</div> <!-- exploreModule -->
-
-
-	<div id="suggestionsModule" class="container-fluid jumbotron text-center">
-		<div class="article">
-			<p><a href="#">Link to article</a></h3>
-			<p><a href="#">Link to article</a></h3>
-			<p><a href="#">Link to article</a></h3>
-		</div>
-
-	</div><!-- suggestionModule -->
 
 </div> <!-- wrapper -->
 {% endblock %}

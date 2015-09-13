@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-
+{% block title %} Search Results - Legal Pal{% endblock %}
 {% block content %}
 
 <div class="wrapper">
@@ -12,19 +12,22 @@
 				</div>
 
 				<div class="col-xs-3">
-					<button type="submit" class="btn btn-success btn-lg">Get help!</button>
+					<button type="submit" class="btn btn-success btn-block btn-lg">Get help!</button>
 				</div>
 			</div>
 		</form>
 	</div>
 
-	<div id="result">
+	<div id="resultlist">
+		
 		{% for article in articles %}
-		<h3 class="media-heading">{{ article.title }}</h3>
-		<p>{{ article.summary }}</p>
-		<a href="{% url 'article' article.pk %}"> Read More </a>
+			<div class="result">
+				<h3 class="media-heading">{{ article.title }}</h3>
+				<p>{{ article.summary }}</p>
+				<a href="{% url 'article' article.pk %}"> Read More </a>
+			</div>
 		{% endfor %}
-	</div>
+	</div><!-- resultlist -->
 
 </div>
 
