@@ -39,13 +39,9 @@
 {% endif %}
 <div class='resoucemod section'>
 	<div class="row section">
-		<div class='col-xs-4 resourceitem'>
-			{% for resource in resources %}
-		
+		{% for resource in resources %}
 			{% include 'resource.html' %}
-		
 		{% endfor %}
-		</div>
 	</div>
 </div><!-- ResouceMod -->
 
