@@ -23,6 +23,7 @@ urlpatterns = [
     url(r'^search/$', views.search, name='search'),
     url(r'^categories/(?P<id>[0-9]+)/$', views.category, name='category'),
     url(r'^articles/(?P<id>[0-9]+)/$', views.article, name='article'),
+    url(r'^resources/$', views.resources, name='resources'),
     url(r'^resources/(?P<id>[0-9]+)/$', views.resource),
     url(r'^login/$', views.login_view, name='login'),
     url(r'^logout/$', views.logout_view, name='logout'),

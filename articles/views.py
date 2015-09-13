@@ -14,6 +14,7 @@ def search(request):
 
 def article(request, id):
     article = get_object_or_404(Article, pk=id)
+    resources = Resource.objects.filter(categories__contains=article.categ)
     return render(request, "article.html", {'article': article})
 
 def resource(request, id):
@@ -25,6 +26,9 @@ def category(request, id):
     articles = category.articles.all()
     resources = category.resources.all()
     return render(request, "results.html", {'articles': articles, 'resources': resources})
+
+def resources(request):
+    return render(request, "resources.html", {'resources': Resource.objects.all()})
 
 def login_view(request):
     username = request.POST['username']
