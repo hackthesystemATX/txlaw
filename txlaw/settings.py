@@ -37,6 +37,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'markdown_deux',
     'articles',
 )
 
@@ -77,11 +78,8 @@ WSGI_APPLICATION = 'txlaw.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'legalpal',
-        'USER': 'django',
-        'PASSWORD': 'vaHuGxk4FbFGyqBFBgP3XwyFk59V93PQD9fKcgHuXcHrEN2Nzs2K8TZfVcUrPgFB',
-        'HOST': 'legalpal.db',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
 

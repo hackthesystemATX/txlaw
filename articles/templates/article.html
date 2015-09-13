@@ -1,3 +1,4 @@
+{% load markdown_deux_tags %}
 {% extends "base.html" %}
 {% block title %}{{ article.title }} - LegalPal{% endblock %}
 {% block content %}
@@ -28,7 +29,7 @@
 				<span class="articleauth"> <strong>Author:</strong> <span id='authname'>{{ article.author }}</span> </span>
 				<span class="articleupdate"> <strong>  Article Last Updated:</strong> {{ article.last_updated }} </span>
 			</p>
-			<p>{{ article.text }}</p>
+			<p>{{ article.text | markdown }}</p>
 			
 			<div id='backto'>
 				<a href="#">Back to search results</a>
@@ -40,7 +41,7 @@
 		<div class='deco-hr text-center'>
 			<p>Need further assistance? Contact one of our partner organizations.</p>
 		</div>
-		<h2>reSOurCes</h2>
+		<h2>Resources:</h2>
 		<div class="row">
 			<div class="col-xs-4">
 				{% for resource in resources %}
