@@ -32,12 +32,7 @@
 		<div class="row">
 			<div class="col-xs-4">
 				{% for resource in resources %}
-					<p>{{ resource.name }}</p>
-					<p>{% if resource.address %}{{ resource.address }}{% endif %}</p>
-					<p>{% if resource.phone %} {{ resource.phone }} {% endif %} </p>
-					<p>{% if resource.email %} {{ resource.email }} {% endif %} </p>
-					<p>{% if resource.url %} {{ resource.url }} {% endif %}</p>
-					<p>
+					{% include 'resource.html' %}
 				{% endfor %}
 			</div>
 		</div>
