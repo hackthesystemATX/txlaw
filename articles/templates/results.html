@@ -4,6 +4,7 @@
 
 <div class="wrapper">
 
+
 	<div id="searchbar">
 		<form>
 			<div class="form-group">
@@ -19,11 +20,13 @@
 		</form>
 	</div>
 
+	
+
 	<div id="resultlist" class='section'>
 		
 		{% for article in articles %}
 			<div class="result">
-				<h3 class="media-heading results-title">{{ article.title }}</h3>
+				<h3 class="media-heading results-title"><strong>{{ article.title }} </strong></h3>
 				<p class="results-summary">{{ article.summary }}</p>
 				<a href="{% url 'article' article.pk %}" class="results-readmore"> Read More </a>
 			</div>

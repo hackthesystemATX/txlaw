@@ -17,19 +17,24 @@
 			</div>
 		</form>
 	</div>
-	<div id="goto" class='section'>
-		<strong>Go-to:</strong>
-	</div>
-	<div id="article" class='section'>
-		<h1 class="article-title">{{ article.title }}</h1>
-		<p class=""><strong>Author:</strong> {{ article.author }}<strong>  Article Last Updated:</strong> {{ article.last_updated }} </p>
-		<p>{{ article.text }}</p>
-		
-		<div id='backto'>
-			<a href="#">Back to search results</a>
+
+	<div class='article-section'>
+		<div id="goto" class='section'>
+			<strong>Go-to:</strong>
+		</div>
+		<div id="article">
+			<h1 class="article-title"><strong>{{ article.title }}</strong></h1>
+			<p class="article-summary">
+				<span class="articleauth"> <strong>Author:</strong> <span id='authname'>{{ article.author }}</span> </span>
+				<span class="articleupdate"> <strong>  Article Last Updated:</strong> {{ article.last_updated }} </span>
+			</p>
+			<p>{{ article.text }}</p>
+			
+			<div id='backto'>
+				<a href="#">Back to search results</a>
+			</div>
 		</div>
 	</div>
-
 
 	<div id="ResourceContact" class='section'>
 		<div class='deco-hr text-center'>

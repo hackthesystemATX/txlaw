@@ -26,23 +26,22 @@
 		{% for category in categories %}
 		<div id='resourceCat' class="col-xs-6 col-md-3">
 			<a href="{% url 'category_resources' category.pk %}">
-				<div id='cat-circle'>
-				<span class="{{ category.icon }}"></span>
-				</div>
+				<span class="caticon {{ category.icon }}"></span>
 			</a>
 			<p><a href="{% url 'category_resources' category.pk %}">{{ category.name }}</a></p>
 		</div>
 		{% endfor %}
 	</div> <!-- row -->
 </div> <!-- exploreModule -->
+
 {% endif %}
 <div class='resoucemod section'>
 	<div class="row">
-		<div class='col-xs-4'>
 		{% for resource in resources %}
+		<div class='col-xs-4 resourceitem'>
 			{% include 'resource.html' %}
-		{% endfor %}
 		</div>
+		{% endfor %}
 	</div>
 </div><!-- ResouceMod -->
 

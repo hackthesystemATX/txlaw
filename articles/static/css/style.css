@@ -1,51 +1,46 @@
 
 
 /**************
-Orange hex code: #f98258
-grey input area hex code: #ccd6db
-dark grey input text hex code: #7d8082
+orange buttons: #EF6C00
+Dark Grey:  #4A4A4A
+input boxes: #EFEFEF
+text in input boxes: #7D8082
+Dark Teal color: #096378
+Light grey: #F5F5F7
 
 ***************/
 
 
 
+
+
+/********* Base **********/
+
 body {
 	font-family:'Asap', sans-serif;
-  color:#7d8082;
+  color:#4A4A4A;
+  font-size: 1.5em
 }
-
-a {
-  color:#7d8082
-}
-
-span {
-	font-size:5em;
-}
-
-
-
 
 input[type=text] {
   margin-bottom: 10px;
-  background-color: #ccd6db;
+  background-color:#EFEFEF;
+  color:#7D8082;
+  font-size: 2em;
 }
 
 button {
   color:#fff;
 }
 
-
-/***.bg-section {
-  background-color: teal;
-  background:center no-repeat fixed url(cap.jpg) #eee;
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-
-}
-
-***/
+/**
+Homepage
+nav bar- 1.5em
+"LegalPal Help Texans navigate legal troubles"- 3.5em;
+"How can we"- 3em;
+ input fields- 2em
+text below icons- 2em
+**/
 
 .jumbotron {
   margin:0;
@@ -66,7 +61,7 @@ button {
 /********* Nav Bar *********/
 .navbar {
   background-color: white;
-  
+  font-size:1.5em;
 }
 
 
@@ -76,7 +71,7 @@ button {
 
 
 footer {
-  background:#7d8082;
+  background:#4A4A4A;
   padding: 5%;
   color:#fff;
 }
@@ -91,20 +86,30 @@ footer {
 
 
 .go-btn {
-  background-color:#f98258;
-  margin-left: -25%;
+  background-color:#EF6C00;
 }
 
+.jumbobox h2 {
+  font-size:3.5em;
+}
 
+.jumbobox h3 {
+  font-size:3em;
+}
 
 
 /********* Category Icon *********/
 #category a {
-  color:teal;
-}#resourceCat a {
+  color:#4A4A4A;
+}
+
+#resourceCat a {
   color:white;
 }
 
+#category p, #resourceCat p {
+  font-size:2em;
+}
 
 #category a:hover, #resourceCat a:hover {
   color:#f98258;
@@ -120,45 +125,89 @@ footer {
   color:white;
 }
 
+.caticon {
+  font-size:10em;
+}
 
+
+
+/**************
+Search/article page
+"By category"-2em
+text below icons- 1.5em
+
+Articles
+Article header- 2.2em
+text below header- 2em
+"read more"
+
+***************/
+
+
+/********* Search results  *********/
+.article-title, .results-title {
+  color:#096378;
+}
+.result {
+  background-color: #F5F5F7;  
+  padding:2%;
+  margin-bottom:2%;
+  border:2px solid #4A4A4A;
+  border-radius: 2%;
+}
+
+.result a {
+  text-decoration: underline;
+}
 
 /********* Articles *********/
 
+#article {
+  border: 1px solid #4A4A4A;
+  padding:5%;
+}
 #goto {
   margin:0;
   padding:1%;
-  background: #aaa;
+  background: #4A4A4A;
   color:white;
 }
-.result {
-	background-color: #eee;
-	padding:2%;
-	margin-bottom:2%;
-}
 
-.article-title {
-  color:teal;
 
-}
+
 
 #backto{
   margin-top: 10%;
 }
 
 #backto a {
-  color: teal;
+  text-decoration: underline;
+}
+
+.article-section {
+  padding-left:5%;
+  padding-right:5%;
+}
+#authname {
+  color:#096378;
+}
+.articleupdate {
+  margin-left:5%;
 }
 
 
 /********* Resource Module *********/
 .resourcemod {
-	background-color: #eee;
 	padding:2%;
 	margin-bottom:2%;
 }
 
+.resourceitem {
+  background-color: #eee;
+}
+
 .resourcemod a {
-  color:teal;
+  text-decoration: underline;
 }
 
 
