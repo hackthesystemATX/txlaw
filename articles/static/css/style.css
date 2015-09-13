@@ -19,7 +19,11 @@ Light grey: #F5F5F7
 body {
 	font-family:'Asap', sans-serif;
   color:#4A4A4A;
-  font-size: 1.5em
+  height:100%;
+}
+
+p, a {
+  font-size: 1.5em;
 }
 
 input[type=text] {
@@ -27,6 +31,7 @@ input[type=text] {
   background-color:#EFEFEF;
   color:#7D8082;
   font-size: 2em;
+  height:2em;
 }
 
 button {
@@ -42,26 +47,32 @@ nav bar- 1.5em
 text below icons- 2em
 **/
 
-.jumbotron {
-  margin:0;
-  position: relative;
-  background: teal url("../static/assets/cap-bg.jpg") center center;
-  width:100%;
-  height:100%;
-  background-size: cover;
-  overflow:hidden;
-
-}
 
 .section {
   position:relative;
   padding: 10% 5% 10% 5%;
 }
 
+
+#assistModule{
+
+  background: url('assets/fractual_bg.jpg');
+  background-repeat: no-repeat;
+  background-size:cover;
+}
+
+.topbg {
+  background: url('https://images.unsplash.com/photo-1438978280647-f359d95ebda4?q=80&fm=jpg&s=73cb1239b517411534379c92660b2660');
+  background-size: cover;
+  height: 50vh;
+}
+
 /********* Nav Bar *********/
 .navbar {
   background-color: white;
   font-size:1.5em;
+  margin-bottom: 0;
+  position:relative;
 }
 
 
@@ -87,14 +98,17 @@ footer {
 
 .go-btn {
   background-color:#EF6C00;
+  font-size: 2em;
 }
 
 .jumbobox h2 {
   font-size:3.5em;
+  margin-bottom:7%;
 }
 
 .jumbobox h3 {
-  font-size:3em;
+  font-size:2.25em;
+  margin-bottom:5%;
 }
 
 
@@ -104,7 +118,7 @@ footer {
 }
 
 #resourceCat a {
-  color:white;
+  color:#096378;
 }
 
 #category p, #resourceCat p {
@@ -126,7 +140,7 @@ footer {
 }
 
 .caticon {
-  font-size:10em;
+  font-size:6em;
 }
 
 
@@ -136,18 +150,17 @@ Search/article page
 "By category"-2em
 text below icons- 1.5em
 
-Articles
-Article header- 2.2em
-text below header- 2em
-"read more"
 
 ***************/
 
 
 /********* Search results  *********/
-.article-title, .results-title {
-  color:#096378;
+
+#searchbar {
+  margin-top:5%;
+  margin-bottom:5%;
 }
+
 .result {
   background-color: #F5F5F7;  
   padding:2%;
@@ -156,11 +169,35 @@ text below header- 2em
   border-radius: 2%;
 }
 
+.results-title {
+  color:#096378;
+  font-size: 2.2em;
+}
+
 .result a {
   text-decoration: underline;
 }
 
-/********* Articles *********/
+#resultlist {
+  background-color: #fff;
+  border-radius: 5%;
+}
+
+/********* Articles 
+
+
+Articles
+Article header- 2.2em
+text below header- 2em
+"read more"
+
+
+*********/
+
+.article-title {
+  color:#096378;
+  font-size: 2.2em;
+}
 
 #article {
   border: 1px solid #4A4A4A;
@@ -172,9 +209,6 @@ text below header- 2em
   background: #4A4A4A;
   color:white;
 }
-
-
-
 
 #backto{
   margin-top: 10%;
@@ -208,6 +242,7 @@ text below header- 2em
 
 .resourcemod a {
   text-decoration: underline;
+  font-size: 1em;
 }
 
 
