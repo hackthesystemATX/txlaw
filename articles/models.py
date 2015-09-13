@@ -5,7 +5,10 @@ from django.contrib.auth.models import User
 class Category(models.Model):
     name = models.CharField(max_length=50)
     description = models.TextField()
-    icon = models.TextField()
+    icon = models.TextField(blank=True)
+    # Should this category be shown on the main page?
+    is_major = models.BooleanField(default=False)
+
     # articles: related field for Article.categories
     # resources: related field for Resource.categories
 

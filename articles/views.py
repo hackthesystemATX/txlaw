@@ -1,21 +1,40 @@
 from django.shortcuts import render, get_object_or_404
 from django.contrib.auth import authenticate, login
 from .models import Category, Article, Resource
+import operator
 
 def landing(request):
     return render(request, "landing.html", {'categories': Category.objects.all()})
 
-def search(request):
+def search(request, id=None):
     query = request.POST['query']
     # TODO: use an actual search engine
-    articles = (Article.objects.filter(title__icontains=query) | Article.objects.filter(text__icontains=query)).all()
-    resources = (Resource.objects.filter(name__icontains=query) | Resource.objects.filter(description__icontains=query)).all()
+    if id is not None:
+        category = get_object_or_404(Catgory, pk=id)
+        articles = (Article.objects.filter(title__icontains=query) | Article.objects.filter(text__icontains=query)).all()
+        resources = (Resource.objects.filter(name__icontains=query) | Resource.objects.filter(description__icontains=query)).all()
+    else:
+        articles = (Article.objects.filter(title__icontains=query) | Article.objects.filter(text__icontains=query)).all()
+        resources = (Resource.objects.filter(name__icontains=query) | Resource.objects.filter(description__icontains=query)).all()
     return render(request, "results.html", {'articles': articles, 'resources': resources})
+
 
 def article(request, id):
     article = get_object_or_404(Article, pk=id)
-    #resources = Resource.objects.filter(categories__contains=article.category)
-    return render(request, "article.html", {'article': article})
+    resources = {} # Key is resource, value is number of overlapping categories
+
+    # Get all resources that share a category with the article.
+    for category in article.categories.iterator(): # maybe filter by is_major
+        for resource in category.resources.iterator():
+            if resource not in resources:
+                resources[resource] = 1
+            else:
+                resources[resource] += 1
+
+    # Sort based on how many categories overlap
+    resources_sorted = sorted(resources.items(), key=operator.itemgetter(1), reverse=True)
+
+    return render(request, "article.html", {'article': article, 'resources': resources_sorted)})
 
 def category(request, id):
     category = get_object_or_404(Category, pk=id)

@@ -21,6 +21,7 @@ urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^$', views.landing, name='landing'),
     url(r'^search/$', views.search, name='search'),
+    url(r'^search/(?P<id>[0-9]+)/$', views.search, name='search_category'),
     url(r'^categories/(?P<id>[0-9]+)/$', views.category, name='category'),
     url(r'^articles/(?P<id>[0-9]+)/$', views.article, name='article'),
     url(r'^resources/$', views.resources, name='resources'),
