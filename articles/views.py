@@ -34,7 +34,7 @@ def article(request, id):
     # Sort based on how many categories overlap
     resources_sorted = sorted(resources.items(), key=operator.itemgetter(1), reverse=True)
 
-    return render(request, "article.html", {'article': article, 'resources': resources_sorted)})
+    return render(request, "article.html", {'article': article, 'resources': resources_sorted})
 
 def category(request, id):
     category = get_object_or_404(Category, pk=id)
