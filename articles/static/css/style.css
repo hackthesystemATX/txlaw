@@ -54,18 +54,14 @@ text below icons- 2em
 }
 
 
-#assistModule{
+#assistModule, .topbg{
 
   background: url('assets/fractual_bg.png');
   background-repeat: no-repeat;
-  background-size:cover;
+  background-size: cover;
+  min-height:50vh;
 }
 
-.topbg {
-  background: url('assets/fractual_bg.png');
-  background-size: cover;
-  height: 50vh;
-}
 
 /********* Nav Bar *********/
 .navbar {
@@ -118,7 +114,7 @@ footer {
 }
 
 #resourceCat a {
-  color:#096378;
+  color:#fff;
 }
 
 #category p, #resourceCat p {
