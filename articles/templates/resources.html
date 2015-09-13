@@ -4,49 +4,44 @@
 
 
 <div class="wrapper">
-
 <div id="searchbar">
-		<form>
-			<div class="row">
-				<div class="col-xs-9">
-					<input type="text" name="search" class="form-control input-lg" placeholder="Type here to ask another question">
-				</div>
-
-				<div class="col-xs-3">
-					<button type="submit" class="btn btn-success btn-block btn-lg">Get help!</button>
-				</div>
-			</div>
-		</form>
-	</div>
-
-
-		<div id="exploreModule" class="container-fluid jumbotron text-center">
-		<p>Explore common questions by topic:</p>
+	<form>
 		<div class="row">
-			{% for category in categories %}
-			<div id='category' class="col-xs-6 col-md-3">
-				<a href="{% url 'category' category.pk %}"> <span class="{{ category.icon }}"></span></a>
-				<p>{{ category.name }}</p>
+			<div class="col-xs-9">
+				<input type="text" name="search" class="form-control input-lg" placeholder="Type here to ask another question">
 			</div>
-			{% endfor %}
-		</div> <!-- row -->
-
-	</div> <!-- exploreModule -->
-
-
-	<div class="row">
-		<div class="col-xs-4">
-			{% for resource in resources %}
-				<p>{{ resource.name }}</p>
-				<p>{% if resource.address %}{{ resource.address }}{% endif %}</p>
-				<p>{% if resource.phone %} {{ resource.phone }} {% endif %} </p>					<p>{% if resource.email %} {{ resource.email }} {% endif %} </p>
-				<p>{% if resource.url %} {{ resource.url }} {% endif %}</p>
-				</p>
-			{% endfor %}
+			<div class="col-xs-3">
+				<button type="submit" class="btn btn-success btn-block btn-lg">Get help!</button>
+			</div>
 		</div>
-	</div>
+	</form>
+</div>
 
 
+<div id="exploreModule" class="container-fluid jumbotron text-center">
+	<p>Explore common questions by topic:</p>
+	<div class="row">
+		{% for category in categories %}
+		<div id='resourceCat' class="col-xs-6 col-md-3">
+			<a href="{% url 'category_resources' category_resources.pk %}"> <span class="{{ category.icon }}"></span></a>
+			<p>{{ category.name }}</p>
+		</div>
+		{% endfor %}
+	</div> <!-- row -->
+</div> <!-- exploreModule -->
+
+<div class="row">
+	{% for resource in resources %}
+		<div class="col-xs-4 resourcemod"> 
+			<p>{{ resource.name }}</p>
+			<p>{% if resource.address %}{{ resource.address }}{% endif %}</p>
+			<p>{% if resource.phone %} {{ resource.phone }} {% endif %} </p>					<p>{% if resource.email %} {{ resource.email }} {% endif %} </p>
+			<p>{% if resource.url %} {{ resource.url }} {% endif %}</p>
+			</p>
+		</div>
+	{% endfor %}
+</div>
+</div><!-- ResouceMod -->
 
 </div>
 
