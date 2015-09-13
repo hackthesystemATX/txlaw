@@ -14,7 +14,7 @@
     <link href='https://fonts.googleapis.com/css?family=Asap:400,700' rel='stylesheet' type='text/css'>
 
 
-    <title>Legaling.org</title>
+    <title>{% block title %}LegalPal{% endblock %}</title>
   </head>
 
 
@@ -23,13 +23,13 @@
       <nav class="navbar navbar-default">
         <div class="container-fluid">
           <div class="nav pull-left">
-            <a href="#" id="logo"> Legaling </a>
+            <a href="{% url 'landing' %}" id="logo"> LegalPal </a>
           </div> <!-- navbar header -->
 
           <!-- Links -->
           <div> 
             <ul class="nav nav-pills pull-right">
-              <li><a href="#">Home</a></li>
+              <li><a href="{% url 'landing' %}">Home</a></li>
               <li><a href="#">Resources</a></li>
               <li><a href="#">About Us</a></li>
               <li><a href="#">Contact</a></li>
@@ -48,15 +48,6 @@
           <div class='row'>
             <div class="col-xs-2">
               <p>Supported by: </p>
-            </div>
-            <div class="col-xs-3">
-                <a href="#"> <img class="img-responsive img-circle" src="http://placehold.it/150x150"></a>
-            </div>
-            <div class="col-xs-3">
-                <a href="#"> <img class="img-responsive img-circle" src="http://placehold.it/150x150"></a>
-            </div>
-            <div class="col-xs-3">
-                <a href="#"> <img class="img-responsive img-circle" src="http://placehold.it/150x150"></a>
             </div>
           </div> <!-- row -->
         </div>
