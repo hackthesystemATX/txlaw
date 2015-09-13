@@ -11,8 +11,8 @@ def search(request, id=None):
     # TODO: use an actual search engine
     if id is not None:
         category = get_object_or_404(Catgory, pk=id)
-        articles = (Article.objects.filter(title__icontains=query) | Article.objects.filter(text__icontains=query)).all()
-        resources = (Resource.objects.filter(name__icontains=query) | Resource.objects.filter(description__icontains=query)).all()
+        articles = (Article.objects.filter(title__icontains=query) | Article.objects.filter(text__icontains=query)).filter(categories__in=[category]).all()
+        resources = (Resource.objects.filter(name__icontains=query) | Resource.objects.filter(description__icontains=query)).filter(categories__in=[category]).all()
     else:
         articles = (Article.objects.filter(title__icontains=query) | Article.objects.filter(text__icontains=query)).all()
         resources = (Resource.objects.filter(name__icontains=query) | Resource.objects.filter(description__icontains=query)).all()
@@ -30,7 +30,7 @@ def article(request, id):
                 resources[resource] = 1
             else:
                 resources[resource] += 1
-    
+
     # Sort based on how many categories overlap
     resources_sorted = [res[0] for res in sorted(resources.items(), key=operator.itemgetter(1), reverse=True)]
 
