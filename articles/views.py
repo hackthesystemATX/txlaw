@@ -28,7 +28,7 @@ def category(request, id):
     return render(request, "results.html", {'articles': articles, 'resources': resources})
 
 def resources(request):
-    return render(request, "resources.html", {'resources': Resource.objects.all()})
+    return render(request, "resources.html", {'resources': Resource.objects.all(), 'categories': Category.objects.all()})
 
 def login_view(request):
     username = request.POST['username']
