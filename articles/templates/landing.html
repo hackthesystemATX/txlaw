@@ -3,9 +3,9 @@
 {% block content %}
 <div class="wrapper">
 	<div id="assistModule" class="container-fluid text-center">
-		<div class='jumbotron'>
-			<div class='container jumbobox'>
-				<h2>LegalPal helps Texans navigate legal troubles</h2>
+		<div class=''>
+			<div class='container jumbobox section'>
+				<h2>LegalPal helps Texans navigate legal troubles.</h2>
 				<h3> How can we assist you?</h3>
 				<form action="{% url 'search' %}" method="post"> {% csrf_token %}
 					<div class="form-group">
@@ -31,8 +31,10 @@
 			<div id='category' class="col-xs-6 col-md-3">
 				<a href="{% url 'category' category.pk %}"> 
 					<span class="caticon {{ category.icon }}"></span>
-				</a>	
+					
 				<p> <strong> {{ category.name }} </strong></p>
+
+				</a>
 			</div>
 			{% endfor %}
 		</div> <!-- row -->
