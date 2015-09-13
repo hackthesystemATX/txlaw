@@ -22,17 +22,18 @@
 	</div>
 
 
-
-	<div id="resultlist" class='section'>
-		
-		{% for article in articles %}
-			<div class="result">
-				<h3 class="media-heading results-title"><strong>{{ article.title }} </strong></h3>
-				<p class="results-summary">{{ article.summary }}</p>
-				<a href="{% url 'article' article.pk %}" class="results-readmore"> Read More </a>
-			</div>
-		{% endfor %}
-	</div><!-- resultlist -->
+	<div class='section'>
+		<div id="resultlist" class='section col-md-8 col-md-offset-2'>
+			
+			{% for article in articles %}
+				<div class="result">
+					<h3 class="media-heading results-title"><strong>{{ article.title }} </strong></h3>
+					<p class="results-summary">{{ article.summary }}</p>
+					<a href="{% url 'article' article.pk %}" class="results-readmore"> Read More </a>
+				</div>
+			{% endfor %}
+		</div><!-- resultlist -->
+	</div>
 
 </div>
 
