@@ -56,13 +56,13 @@ text below icons- 2em
 
 #assistModule{
 
-  background: url('assets/fractual_bg.jpg');
+  background: url('assets/fractual_bg.png');
   background-repeat: no-repeat;
   background-size:cover;
 }
 
 .topbg {
-  background: url('https://images.unsplash.com/photo-1438978280647-f359d95ebda4?q=80&fm=jpg&s=73cb1239b517411534379c92660b2660');
+  background: url('assets/fractual_bg.png');
   background-size: cover;
   height: 50vh;
 }

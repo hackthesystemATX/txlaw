@@ -31,8 +31,10 @@
 			<div id='category' class="col-xs-6 col-md-3">
 				<a href="{% url 'category' category.pk %}"> 
 					<span class="caticon {{ category.icon }}"></span>
-				</a>	
+					
 				<p> <strong> {{ category.name }} </strong></p>
+
+				</a>
 			</div>
 			{% endfor %}
 		</div> <!-- row -->
