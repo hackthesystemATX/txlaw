@@ -24,7 +24,7 @@ urlpatterns = [
     url(r'^categories/(?P<id>[0-9]+)/$', views.category, name='category'),
     url(r'^articles/(?P<id>[0-9]+)/$', views.article, name='article'),
     url(r'^resources/$', views.resources, name='resources'),
-    url(r'^resources/(?P<id>[0-9]+)/$', views.resource),
+    url(r'^resources/(?P<id>[0-9]+)/$', views.category_resources, name='category_resources'),
     url(r'^login/$', views.login_view, name='login'),
     url(r'^logout/$', views.logout_view, name='logout'),
     url(r'^register/$', views.register_view, name='register'),

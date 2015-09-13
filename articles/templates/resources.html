@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% block title %} Resources - Legal Pal{% endblock %}
+{% block title %}Resources - Legal Pal{% endblock %}
 {% block content %}
 
 
@@ -17,25 +17,27 @@
 	</form>
 </div>
 
-
+{% if categories %}
 <div id="exploreModule" class="container-fluid jumbotron text-center">
 	<p>Explore common questions by topic:</p>
 	<div class="row">
 		{% for category in categories %}
 		<div id='resourceCat' class="col-xs-6 col-md-3">
-			<a href="{% url 'category_resources' category_resources.pk %}"> <span class="{{ category.icon }}"></span></a>
-			<p>{{ category.name }}</p>
+			<a href="{% url 'category_resources' category.pk %}"> <span class="{{ category.icon }}"></span></a>
+			<p><a href="{% url 'category_resources' category.pk %}">{{ category.name }}</a></p>
 		</div>
 		{% endfor %}
 	</div> <!-- row -->
 </div> <!-- exploreModule -->
+{% endif %}
 
 <div class="row">
 	{% for resource in resources %}
 		<div class="col-xs-4 resourcemod"> 
 			<p>{{ resource.name }}</p>
 			<p>{% if resource.address %}{{ resource.address }}{% endif %}</p>
-			<p>{% if resource.phone %} {{ resource.phone }} {% endif %} </p>					<p>{% if resource.email %} {{ resource.email }} {% endif %} </p>
+			<p>{% if resource.phone %} {{ resource.phone }} {% endif %} </p>
+			<p>{% if resource.email %} {{ resource.email }} {% endif %} </p>
 			<p>{% if resource.url %} {{ resource.url }} {% endif %}</p>
 			</p>
 		</div>
