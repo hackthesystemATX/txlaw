@@ -1,9 +1,7 @@
-<a href="{{ resource.url }}">
 	<div class="col-xs-4 resourcemod">
 		<strong>{{ resource.name }}</strong>
 		{% if resource.address %}<p>{{ resource.address }}</p>{% endif %}
-		{% if resource.phone %}<p>{{ resource.phone }}</p>{% endif %}
-		{% if resource.email %}<p>{{ resource.email }}</p>{% endif %}
+		{% if resource.phone %}<p><a href='tel: {{ resource.phone }}'>{{ resource.phone }}</a></p>{% endif %}
+		{% if resource.email %}<p><a href="mailto: {{ resource.email }}">{{ resource.email }}</a></p>{% endif %}
 		{% if resource.url %}<p><a href="{{ resource.url }}">Learn More</a></p>{% endif %}
 	</div>
-</a>

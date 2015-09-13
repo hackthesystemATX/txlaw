@@ -1,20 +1,21 @@
 
-.exploreDiv {
-	border-radius:50%;
-	background-color:#555;
-	height:50px;
-	width:50px;
-}
 
-input[type=text] {
-  margin-bottom: 10px;
-}
+/**************
+Orange hex code: #f98258
+grey input area hex code: #ccd6db
+dark grey input text hex code: #7d8082
+
+***************/
+
 
 
 body {
-	padding-left:10%;
-	padding-right:10%;
 	font-family:'Asap', sans-serif;
+  color:#7d8082;
+}
+
+a {
+  color:#7d8082
 }
 
 span {
@@ -22,11 +23,114 @@ span {
 }
 
 
+
+
+input[type=text] {
+  margin-bottom: 10px;
+  background-color: #ccd6db;
+}
+
+button {
+  color:#fff;
+}
+
+
+.bg-section {
+  background-color: blue;
+  background:center no-repeat fixed url(cap.jpg) #eee;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+
+}
+
+
+.section {
+  position:relative;
+  padding: 10% 5% 10% 5%;
+}
+
+/********* Nav Bar *********/
+.navbar {
+  background-color: white;
+  
+}
+
+
+.navbar a {
+
+}
+
+
+footer {
+  background:#7d8082;
+  padding: 5%;
+  color:#fff;
+}
+
+
+/********* Landing; Jumbotron *********/
+
+.bg-section h1, h2, h3{
+  color:#fff;
+}
+
+
+.help-btn {
+  background-color:#f98258;
+}
+
+
+
+
+/********* Category Icon *********/
+#cat-circle {
+  background:#7d8082;
+  border-radius: 50%;
+  vertical-align: middle;
+}
+
+#category a, #resourceCat a {
+  color:white;
+}
+
+#category, #resourceCat a:hover {
+  color:#f98258;
+  text-decoration: none !important;
+}
+
+#category, #resourceCat p{
+  text-transform: uppercase;
+  margin-top: 2%;
+}
+
+
 /********* Articles *********/
+
+#goto {
+  margin:0;
+  padding:1%;
+  background: #aaa;
+  color:white;
+}
 .result {
 	background-color: #eee;
 	padding:2%;
 	margin-bottom:2%;
+}
+
+.article-title {
+  color:blue;
+
+}
+
+#backto{
+  margin-top: 10%;
+}
+
+#backto a {
+  color: blue;
 }
 
 
@@ -35,6 +139,10 @@ span {
 	background-color: #eee;
 	padding:2%;
 	margin-bottom:2%;
+}
+
+.resourcemod a {
+  color:blue;
 }
 
 
